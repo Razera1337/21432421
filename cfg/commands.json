@@ -1,0 +1,247 @@
+{
+	"commandList": [
+		{
+			"type": "js",
+			"regex": "js-example|javascript example",
+			"path": "src/js-modules/example-js.js",
+			"hidden": true
+		}, {
+			"type": "python",
+			"regex": "py-example|python example",
+			"path": "src/py-modules/example-python.py",
+			"hidden": true
+		}, {
+			"type": "lua",
+			"regex": "lua-example|lua example",
+			"path": "src/lua-modules/example-lua.lua",
+			"hidden": true
+		}, {
+			"group": "basic",
+			"type": "js",
+			"regex": "(.*)\\s?help|commands",
+			"help": "help / <command-group (rcon, schedule, basic, etc.)> help",
+			"path": "src/core/core-modules/showCommands.js"
+		}, {
+			"group": "basic",
+			"type": "js",
+			"regex": "cleanup|clean-up|purge",
+			"help": "cleanup",
+			"path": "src/core/core-modules/messageCleaner.js"
+		}, {
+			"group": "basic",
+			"type": "js",
+			"regex": "(show|list) (config|settings)",
+			"help": "show config",
+			"path": "src/core/core-modules/showConfig.js"
+		}, {
+			"group": "basic",
+			"type": "js",
+			"regex": "(change|set) (config) (.+) (.+) (to)( .+){1,}",
+			"help": "set config <id> <entry> to <value>",
+			"path": "src/core/utils/configEditor.js"
+		}, {
+			"group": "basic",
+			"type": "js",
+			"regex": "(.+) (add|remove) required role (.+)$",
+			"help": "<command> add/remove required role <role-name>",
+			"path": "src/core/core-modules/editPermissions.js"
+		}, {
+			"group": "hook",
+			"type": "js",
+			"regex": "(channel)( of)? (.+) (to) (\\d+)$",
+			"help": "set channel of <hook-name> to <channel-name>",
+			"path": "src/core/hook-modules/hookChannel.js"
+		}, {
+			"group": "hook",
+			"type": "js",
+			"regex": "(hook|hooks) config",
+			"help": "hook config",
+			"path": "src/core/hook-modules/hookConfig.js"
+		}, {
+			"group": "hook",
+			"type": "js",
+			"regex": "(enable|disable) (.+)$",
+			"help": "enable/disable <hook-name>",
+			"path": "src/core/hook-modules/hookToggle.js"
+		}, {
+			"group": "hook",
+			"type": "js",
+			"regex": "(interval)( of)? (.+) (to) (.+)$",
+			"help": "set interval of <hook-name> to <interval>",
+			"path": "src/core/hook-modules/hookInterval.js"
+		}, {
+			"group": "hook",
+			"type": "js",
+			"regex": "(list|show) hooks",
+			"help": "list hooks",
+			"path": "src/core/hook-modules/showHooks.js"
+		}, {
+			"group": "currency",
+			"type": "js",
+			"regex": "(convert) (\\d+(.\\d+)? )?(.{3}) (to) (.{3})$",
+			"help": "convert <amount> <currency (EUR)> to <currency (USD)>",
+			"path": "src/js-modules/currency/currencyConverter.js"
+		}, {
+			"group": "currency",
+			"type": "js",
+			"regex": "add currency .{3}$",
+			"help": "add currency <currency (EUR)>",
+			"path": "src/js-modules/currency/addCurrency.js"
+		}, {
+			"group": "currency",
+			"type": "js",
+			"regex": "remove currency .{3}$",
+			"help": "remove currency <currency (EUR)>",
+			"path": "src/js-modules/currency/removeCurrency.js"
+		}, {
+			"group": "currency",
+			"type": "js",
+			"regex": "(currency|crypto|market) (update|stats)",
+			"help": "currency update/stats",
+			"path": "src/js-modules/currency/priceUpdates.js"
+		}, {
+			"group": "rcon",
+			"type": "js",
+			"regex": "rcon (.+) run( .+){1,}$",
+			"help": "rcon <server-name> run <command>",
+			"path": "src/js-modules/rconServer/execCommand.js"
+		}, {
+			"group": "rcon",
+			"type": "js",
+			"regex": "rcon (.+) (connect|info|help)$",
+			"help": "rcon <server-name> connect",
+			"path": "src/js-modules/rconServer/connectInfo.js"
+		}, {
+			"group": "rcon",
+			"type": "js",
+			"regex": "rcon rename (.+) to (.+)$",
+			"help": "rcon rename <old-server-name> to <new-server-name>",
+			"path": "src/js-modules/rconServer/renameServer.js"
+		}, {
+			"group": "rcon",
+			"type": "js",
+			"regex": "(change|set) rcon config (.+) (.+) (to)( .+)",
+			"help": "set rcon config <server-name> <entry> to <value>",
+			"path": "src/js-modules/rconServer/editServerConfig.js"
+		}, {
+			"group": "rcon",
+			"type": "js",
+			"regex": "(change|set) rcon password of (.+)",
+			"help": "set rcon password of <server-name>",
+			"path": "src/js-modules/rconServer/editRconPassword.js"
+		}, {
+			"group": "rcon",
+			"type": "js",
+			"regex": "rcon add (.+)",
+			"help": "rcon add <server-name>",
+			"path": "src/js-modules/rconServer/addServer.js"
+		}, {
+			"group": "rcon",
+			"type": "js",
+			"regex": "rcon remove (.+)",
+			"help": "rcon remove <server-name>",
+			"path": "src/js-modules/rconServer/removeServer.js"
+		}, {
+			"group": "rcon",
+			"type": "js",
+			"regex": "rcon (list|servers)$",
+			"help": "rcon servers/list",
+			"path": "src/js-modules/rconServer/showServers.js"
+		}, {
+			"type": "js",
+			"regex": "(wa|wolfram-?alpha|wolfram|alpha|wolfram alpha) (.+)$",
+			"help": "wa <command>",
+			"path": "src/js-modules/wolframAlpha.js"
+		}, {
+			"group": "schedule",
+			"type": "js",
+			"regex": "add schedule (.+) for (\\d{2}:\\d{2} .{3,6}, \\d{4}-\\d{2}-\\d{2})$",
+			"help": "add schedule <name> for <hh:mm UTC-X, yyyy-mm-dd>",
+			"path": "src/js-modules/scheduler/addSchedule.js"
+		}, {
+			"group": "schedule",
+			"type": "js",
+			"regex": "remove schedule (.+)$",
+			"help": "remove schedule <name>",
+			"path": "src/js-modules/scheduler/removeSchedule.js"
+		}, {
+			"group": "schedule",
+			"type": "js",
+			"regex": "change schedule (name|date) of (.+) to (.+)$",
+			"help": "change schedule name/date of <schedule-name> to <value>",
+			"path": "src/js-modules/scheduler/editSchedule.js"
+		}, {
+			"group": "schedule",
+			"type": "js",
+			"regex": "(join|leave) schedule (.+)",
+			"help": "join/leave schedule <name>",
+			"path": "src/js-modules/scheduler/scheduleMembers.js"
+		}, {
+			"group": "schedule",
+			"type": "js",
+			"regex": "list schedule[s]?\\s?(.*)$",
+			"help": "list schedules / list schedule <name>",
+			"path": "src/js-modules/scheduler/listSchedules.js"
+		}, {
+			"group": "voice",
+			"type": "js",
+			"regex": "join(\\svoice)?",
+			"help": "join",
+			"path": "src/js-modules/voice/join.js"
+		}, {
+			"group": "voice",
+			"type": "js",
+			"regex": "leave(\\svoice)?",
+			"help": "leave",
+			"path": "src/js-modules/voice/leave.js"
+		}, {
+			"group": "voice",
+			"type": "js",
+			"regex": "pause(\\stitle|music)?",
+			"help": "pause",
+			"path": "src/js-modules/voice/pause.js"
+		}, {
+			"group": "voice",
+			"type": "js",
+			"regex": "resume(\\stitle|music)?",
+			"help": "resume",
+			"path": "src/js-modules/voice/resume.js"
+		}, {
+			"group": "voice",
+			"type": "js",
+			"regex": "skip(\\stitle|song)?",
+			"help": "skip",
+			"path": "src/js-modules/voice/skip.js"
+		}, {
+			"group": "voice",
+			"type": "js",
+			"regex": "add (current|next|last)?\\s?title (http(?:s?):\\/\\/(?:www\\.)?youtu(?:be\\.com\\/watch\\?v=|\\.be\\/)([\\w\\-\\_]*)(&(amp;)?\u200C\u200B[\\w\\?\u200C\u200B=]*)?|.+)",
+			"help": "add current/next/last title <YouTube link or title>",
+			"path": "src/js-modules/voice/addTitle.js"
+		}, {
+			"group": "voice",
+			"type": "js",
+			"regex": "add playlist (https:\\/\\/music.(apple).com\\/[\\w]{2}\\/playlist\\/[a-zA-Z0-9]+.*)|(https:\\/\\/open.(spotify).com\\/playlist\\/[a-zA-Z0-9]+.*)|(http(?:s?):\\/\\/(?:www\\.)?youtu(?:be\\.com\\/playlist\\?list=(\\w+)))",
+			"help": "add playlist <YouTube/Apple/Spotify link>",
+			"path": "src/js-modules/voice/addPlaylist.js"
+		}, {
+			"group": "voice",
+			"type": "js",
+			"regex": "show|list playlist|songs|titles|queue",
+			"help": "show/list playlist",
+			"path": "src/js-modules/voice/showPlaylist.js"
+		}, {
+			"group": "voice",
+			"type": "js",
+			"regex": "current song|title|track|music",
+			"help": "current song/title/track/music",
+			"path": "src/js-modules/voice/currentTitle.js"
+		}, {
+			"group": "voice",
+			"type": "js",
+			"regex": "shuffle( mode)? (on|off)",
+			"help": "shuffle on/off",
+			"path": "src/js-modules/voice/shuffle.js"
+		}
+	]
+}
